@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "firecrawl": {
+      "serverUrl": "https://mcp.firecrawl.dev/v2/mcp-oauth"
+    }
+  }
+}
