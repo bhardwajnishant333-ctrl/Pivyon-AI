@@ -1,0 +1,4 @@
+# Firecrawl MCP, interactive OAuth; no embedded secrets
+[mcp_servers.firecrawl]
+url = "https://mcp.firecrawl.dev/v2/mcp-oauth"
+enabled = true
