@@ -3,4 +3,3 @@
 [mcp_servers.firecrawl]
 url = "https://mcp.firecrawl.dev/v2/mcp-oauth"
 enabled = true
-default_tools_approval_mode = "writes"
