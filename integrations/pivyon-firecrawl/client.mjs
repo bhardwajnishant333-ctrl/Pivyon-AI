@@ -24,6 +24,14 @@ export function createPivyonResearchClient({
     return data;
   };
   return Object.freeze({
+    saveDocument: (document) => request('/v1/library',document),
+    listDocuments: (offset=0) => request('/v1/library?offset='+encodeURIComponent(offset)),
+    getDocument: (id, hash) => {
+      if(!/^[a-f0-9]{64}$/.test(id)||(hash&&!/^[a-f0-9]{64}$/.test(hash)))throw new Error('Invalid document reference');
+      return request('/v1/library/'+id+(hash?'?hash='+hash:''));
+    },
+    usage: () => request('/v1/usage'),
+
     search: (query,opts={})=>request("/v1/search",{...opts,query}),
     scrape: (url,opts={})=>request("/v1/scrape",{...opts,url}),
     map: (url,opts={})=>request("/v1/map",{...opts,url}),
